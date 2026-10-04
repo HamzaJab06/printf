@@ -25,9 +25,9 @@ static int	ft_format(char c, va_list args)
 	if (c == 'u')
 		return (ft_print_unsigned(va_arg(args, unsigned int)));
 	if (c == 'x')
-		return (ft_print_hex(va_arg(args, int), 0));
+		return (ft_print_hex(va_arg(args, unsigned int), 0));
 	if (c == 'X')
-		return (ft_print_hex(va_arg(args, int), 1));
+		return (ft_print_hex(va_arg(args, unsigned int), 1));
 	if (c == '%')
 		return (ft_print_char('%'));
 	return (0);
@@ -39,6 +39,8 @@ int	ft_printf(const char *str, ...)
 	size_t	count;
 	size_t	i;
 
+	if (!str)
+		return (-1);
 	va_start(args, str);
 	i = 0;
 	count = 0;
