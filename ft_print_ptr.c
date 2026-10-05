@@ -6,13 +6,13 @@
 /*   By: hjabarin <hjabarin@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/03 15:26:06 by hjabarin          #+#    #+#             */
-/*   Updated: 2026/10/03 17:47:02 by hjabarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 13:53:09 by hjabarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	writenum(unsigned long long n, int *count, char *base)
+static void	writenum(unsigned long n, int *count, char *base)
 {
 	if (n >= 16)
 		writenum((n / 16), count, base);
@@ -20,7 +20,7 @@ static void	writenum(unsigned long long n, int *count, char *base)
 	ft_print_char(base[n % 16]);
 }
 
-static int	ft_print_ull_hex(unsigned long long n)
+static int	ft_print_ull_hex(unsigned long n)
 {
 	int		count;
 	char	*base;
@@ -39,6 +39,6 @@ int	ft_print_ptr(void *ptr)
 	if (!ptr)
 		return (ft_print_str("(nil)"));
 	count += ft_print_str("0x");
-	count += ft_print_ull_hex((unsigned long long)ptr);
+	count += ft_print_ull_hex((unsigned long)ptr);
 	return (count);
 }
