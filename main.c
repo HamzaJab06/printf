@@ -11,9 +11,9 @@ int	main(void)
 	n = 42;
 	p = &n;
 
-	ret1 = printf("%s\n", NULL);
+	ret1 = printf("%p\n");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%s\n", NULL);
+	ret2 = ft_printf("%p\n");
 	printf("%d", ret2);
 	return (0);
 }

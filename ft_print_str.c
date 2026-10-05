@@ -25,7 +25,7 @@ static size_t	ft_strlen(const char *s)
 int	ft_print_str(char *str)
 {
 	size_t	len;
-	
+
 	if (!str)
 		return (ft_print_str("(null)"));
 	len = ft_strlen(str);
